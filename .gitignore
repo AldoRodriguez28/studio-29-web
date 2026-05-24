@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Archivos internos de desarrollo — no van en el repo público
+CLAUDE.md
+skills-lock.json
+.agents/
+.claude/
+
+# Brief con datos del negocio — privado
+brief/
+
+# Versión anterior (el deploy usa index-cinematic.html)
+index.html
