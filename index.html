@@ -607,6 +607,141 @@
       transform: none;
     }
 
+    /* ══════════════════════════════════════════════
+       SCENE — CLIENTES
+    ══════════════════════════════════════════════ */
+    #clientes-strip {
+      background: var(--bg);
+      padding: 80px 48px;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .clientes-label {
+      text-align: center;
+      font-size: .7rem; font-weight: 700; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 48px;
+    }
+    .marquee-wrap {
+      display: flex;
+      gap: 0;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: marqueeScroll 28s linear infinite;
+      flex-shrink: 0;
+    }
+    .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .cliente-chip {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 32px;
+      margin: 0 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      white-space: nowrap;
+      font-family: var(--display); font-weight: 700;
+      font-size: .82rem; letter-spacing: .04em;
+      color: var(--muted);
+      transition: color .3s, border-color .3s;
+    }
+    .cliente-chip:hover { color: var(--text); border-color: rgba(232,96,76,0.3); }
+    .cliente-chip-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); opacity: 0.5; flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════════════
+       SCENE — FUNDADOR
+    ══════════════════════════════════════════════ */
+    #fundador {
+      min-height: 60vh;
+      background: var(--bg2);
+      padding: 120px 48px;
+      display: flex; align-items: center;
+    }
+    #fundador .container {
+      max-width: 1100px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 96px; align-items: center;
+    }
+    .fundador-foto-wrap {
+      position: relative;
+    }
+    .fundador-foto {
+      width: 100%; max-width: 380px;
+      aspect-ratio: 1;
+      border-radius: 24px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%);
+      border: 1px solid var(--border);
+    }
+    .fundador-foto-accent {
+      position: absolute;
+      bottom: -16px; right: -16px;
+      width: 60%; height: 60%;
+      border: 2px solid rgba(232,96,76,0.25);
+      border-radius: 20px;
+      pointer-events: none;
+    }
+    .fundador-badge {
+      position: absolute;
+      top: -12px; left: -12px;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--body); font-size: .72rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 100px;
+    }
+    .fundador-info { }
+    .fundador-eyebrow {
+      font-size: .7rem; font-weight: 700; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+    }
+    .fundador-nombre {
+      font-family: var(--display);
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -0.03em; color: var(--text);
+      margin-bottom: 8px;
+    }
+    .fundador-rol {
+      font-size: .85rem; color: var(--muted);
+      margin-bottom: 32px; letter-spacing: .04em;
+    }
+    .fundador-bio {
+      font-size: 1rem; color: rgba(240,244,248,0.8);
+      line-height: 1.8; margin-bottom: 40px;
+      max-width: 480px;
+    }
+    .fundador-bio strong { color: var(--text); font-weight: 600; }
+    .fundador-stats {
+      display: flex; gap: 40px; margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .f-stat-num {
+      font-family: var(--display); font-size: 2rem; font-weight: 800;
+      color: var(--accent); line-height: 1;
+    }
+    .f-stat-lbl {
+      font-size: .75rem; color: var(--muted); margin-top: 4px; line-height: 1.4;
+    }
+    .fundador-firma {
+      font-family: var(--display); font-size: 1.6rem; font-weight: 700;
+      color: rgba(240,244,248,0.25); letter-spacing: -.01em;
+      font-style: italic;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 767px) {
       /* Base */
@@ -663,6 +798,19 @@
       .cta-pills-final { flex-direction: column; align-items: center; gap: 12px; margin-bottom: 36px; }
       .cta-pill-f { font-size: .82rem; }
       .cta-wa-btn { width: 100%; justify-content: center; padding: 16px 24px; font-size: .95rem; }
+
+      /* Clientes */
+      #clientes-strip { padding: 60px 0; }
+      .clientes-label { padding: 0 20px; margin-bottom: 32px; }
+
+      /* Fundador */
+      #fundador { padding: 72px 20px; }
+      #fundador .container { grid-template-columns: 1fr; gap: 48px; }
+      .fundador-foto { max-width: 260px; margin: 0 auto; }
+      .fundador-foto-wrap { display: flex; justify-content: center; }
+      .fundador-nombre { font-size: clamp(2.2rem, 10vw, 3rem); }
+      .fundador-stats { gap: 24px; }
+      .fundador-bio { font-size: .92rem; }
 
       /* Footer */
       footer { padding: 40px 20px; }
@@ -810,6 +958,34 @@
 </section>
 
 <!-- ════════════════════════════════════
+     CLIENTES — Franja de confianza
+════════════════════════════════════ -->
+<section id="clientes-strip">
+  <p class="clientes-label">Empresas que han confiado en nosotros</p>
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Sección Amarilla</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Tiburones Rojos de Veracruz</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>ADN Digital</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Peek Softworks</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Bustrack</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Bonito Maíz</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>JOAL</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Espacios Lounge</span>
+      <!-- Duplicado para loop continuo -->
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Sección Amarilla</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Tiburones Rojos de Veracruz</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>ADN Digital</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Peek Softworks</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Bustrack</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Bonito Maíz</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>JOAL</span>
+      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Espacios Lounge</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
      SCENE 5 — PRECIOS
 ════════════════════════════════════ -->
 <section id="precios-scene">
@@ -874,6 +1050,53 @@
 
     </div>
     <p class="precios-note">* Precio del servicio de agencia. El presupuesto de publicidad va directo a Meta/Google y no está incluido.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FUNDADOR — Quién está detrás
+════════════════════════════════════ -->
+<section id="fundador">
+  <div class="container">
+
+    <div class="fundador-foto-wrap rev">
+      <span class="fundador-badge">Fundador</span>
+      <img
+        class="fundador-foto"
+        src="https://github.com/AldoRodriguez28.png"
+        alt="Aldo Rodríguez — Fundador de Studio 29"
+        loading="lazy"
+      >
+      <div class="fundador-foto-accent"></div>
+    </div>
+
+    <div class="fundador-info">
+      <p class="fundador-eyebrow rev">La persona detrás del sistema</p>
+      <h2 class="fundador-nombre rev" style="transition-delay:.1s">Aldo<br>Rodríguez.</h2>
+      <p class="fundador-rol rev" style="transition-delay:.15s">Fundador & Estratega de Studio 29 · Veracruz, México</p>
+
+      <p class="fundador-bio rev" style="transition-delay:.2s">
+        Llevo <strong>más de 8 años</strong> construyendo productos digitales y estrategias de adquisición para empresas en México. Fundé Studio 29 con una convicción clara: <strong>las PYMEs mexicanas merecen un marketing que les traiga clientes reales</strong>, no métricas de vanidad. Cada sistema que implementamos está diseñado para que puedas decir exactamente cuánto invertiste y cuánto regresó.
+      </p>
+
+      <div class="fundador-stats">
+        <div class="rev" style="transition-delay:.25s">
+          <div class="f-stat-num">8+</div>
+          <div class="f-stat-lbl">años en desarrollo<br>y marketing digital</div>
+        </div>
+        <div class="rev" style="transition-delay:.3s">
+          <div class="f-stat-num">8</div>
+          <div class="f-stat-lbl">empresas y marcas<br>con las que he trabajado</div>
+        </div>
+        <div class="rev" style="transition-delay:.35s">
+          <div class="f-stat-num">100%</div>
+          <div class="f-stat-lbl">remoto desde<br>Veracruz, México</div>
+        </div>
+      </div>
+
+      <p class="fundador-firma rev" style="transition-delay:.4s">Aldo Rodríguez</p>
+    </div>
+
   </div>
 </section>
 
