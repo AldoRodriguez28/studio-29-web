@@ -633,7 +633,7 @@
     .marquee-track {
       display: flex;
       gap: 0;
-      animation: marqueeScroll 28s linear infinite;
+      animation: marqueeScroll 55s linear infinite;
       flex-shrink: 0;
     }
     .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
@@ -642,22 +642,19 @@
       to   { transform: translateX(-50%); }
     }
     .cliente-chip {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 14px 32px;
-      margin: 0 12px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 100px;
+      display: inline-flex; align-items: center;
+      padding: 0 56px;
       white-space: nowrap;
-      font-family: var(--display); font-weight: 700;
-      font-size: .82rem; letter-spacing: .04em;
-      color: var(--muted);
-      transition: color .3s, border-color .3s;
+      font-family: var(--display); font-weight: 800;
+      font-size: 1rem; letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(240,244,248,0.18);
+      transition: color .4s;
     }
-    .cliente-chip:hover { color: var(--text); border-color: rgba(232,96,76,0.3); }
-    .cliente-chip-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--accent); opacity: 0.5; flex-shrink: 0;
+    .cliente-chip:hover { color: rgba(240,244,248,0.55); }
+    .cliente-chip-sep {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: rgba(232,96,76,0.4); flex-shrink: 0;
     }
 
     /* ══════════════════════════════════════════════
@@ -964,23 +961,23 @@
   <p class="clientes-label">Empresas que han confiado en nosotros</p>
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Sección Amarilla</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Tiburones Rojos de Veracruz</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>ADN Digital</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Peek Softworks</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Bustrack</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Bonito Maíz</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>JOAL</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Espacios Lounge</span>
+      <span class="cliente-chip">Sección Amarilla</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">Tiburones Rojos</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">ADN Digital</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">Peek Softworks</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">Bustrack</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">Bonito Maíz</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">JOAL</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">Espacios Lounge</span><span class="cliente-chip-sep"></span>
       <!-- Duplicado para loop continuo -->
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Sección Amarilla</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Tiburones Rojos de Veracruz</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>ADN Digital</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Peek Softworks</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Bustrack</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Bonito Maíz</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>JOAL</span>
-      <span class="cliente-chip"><span class="cliente-chip-dot"></span>Espacios Lounge</span>
+      <span class="cliente-chip">Sección Amarilla</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">Tiburones Rojos</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">ADN Digital</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">Peek Softworks</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">Bustrack</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">Bonito Maíz</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">JOAL</span><span class="cliente-chip-sep"></span>
+      <span class="cliente-chip">Espacios Lounge</span><span class="cliente-chip-sep"></span>
     </div>
   </div>
 </section>
