@@ -11,5 +11,6 @@ skills-lock.json
 # Brief con datos del negocio — privado
 brief/
 
-# Versión anterior (el deploy usa index-cinematic.html)
-index.html
+# Archivo renombrado — ahora index.html es el cinematic
+index-cinematic.html
+.vercel
